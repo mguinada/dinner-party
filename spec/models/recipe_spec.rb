@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   specify { should validate_presence_of(:name) }
-  specify { should validate_uniqueness_of(:name) }
   specify { should have_and_belong_to_many(:ingredients) }
 
   let(:spaghetti) { create(:ingredient, description: "250 spaghetti") }

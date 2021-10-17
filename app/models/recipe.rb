@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 
   has_and_belongs_to_many :ingredients, join_table: :recipe_ingredients
 
