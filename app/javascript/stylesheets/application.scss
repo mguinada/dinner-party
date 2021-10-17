@@ -1,1 +1,41 @@
 @import "~bootstrap/scss/bootstrap";
+
+.container {
+  margin-top: 20px;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.ingredients {
+  padding: 5px 0 5px 0;
+  margin: 10px 0 10px 0;
+}
+
+.ingredient-list {
+  list-style: circle;
+  font-size: 12px;
+}
+
+.parameters {
+  width: 250px;
+  .parameter {
+    height: 21px;
+    margin-right: 5px;
+    line-height: 21px;
+    font-weight: bold;
+  }
+}
+
+.tag {
+  margin: 2px 2px 2px 2px;
+  padding: 5px 5px 5px 5px;
+  font-size: 75%;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.125)
+}
