@@ -6,8 +6,6 @@ class Recipe < ApplicationRecord
   scope :by_ingredients, ->(ingredient_names) do
     return none if ingredient_names.blank?
 
-    ingredient_ids = Ingredient.by_descriptions(ingredient_names).pluck(:id)
-
     joins(:ingredients)
      .joins(
        <<~SQL.strip_heredoc
@@ -20,7 +18,7 @@ class Recipe < ApplicationRecord
           GROUP BY recipe_ingredients.recipe_id) AS all_ingredients ON recipes.id = all_ingredients.recipe_id
        SQL
      )
-     .where(ingredients: {id: ingredient_ids})
+     .merge(Ingredient.by_descriptions(ingredient_names))
      .group('recipes.id, all_ingredients.count')
      .having("count(ingredients.id) = all_ingredients.count")
   end
