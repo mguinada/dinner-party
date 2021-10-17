@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_10_15_185303) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "unique_names", unique: true
   end
 
 end
