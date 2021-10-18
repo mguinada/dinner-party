@@ -22,7 +22,5 @@
   "devDependencies": {
     "webpack-dev-server": "^3"
   },
-  "peerDependencies": {
-    "@babel/core": "^7.15.8"
-  }
+  "peerDependencies": {}
 }
