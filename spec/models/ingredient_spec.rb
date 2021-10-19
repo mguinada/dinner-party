@@ -24,14 +24,26 @@ RSpec.describe Ingredient, type: :model do
       it { is_expected.to be_empty }
     end
 
-    context "when descriptions do not partially match any ingredient" do
-      let(:descriptions) { ['Bacon', 'Beef'] }
+    context "when descriptions are blank values" do
+      let(:descriptions) { [" ", "  "] }
 
       it { is_expected.to be_empty }
     end
 
-    context "when descriptions are partially match any ingredient" do
-      let(:descriptions) { ['Spaghetti', 'Pecorino', 'Bacon'] }
+    context "when descriptions do not partially match any ingredient" do
+      let(:descriptions) { ["Bacon", "Beef"] }
+
+      it { is_expected.to be_empty }
+    end
+
+    context "when descriptions contain blank spaces and ingredient names" do
+      let(:descriptions) { [" ", "Spaghetti", "  "] }
+
+      it { is_expected.to contain_exactly(spaghetti) }
+    end
+
+    context "when descriptions match some ingredients" do
+      let(:descriptions) { ["Spaghetti", "Pecorino", "Bacon"] }
 
       it { is_expected.to contain_exactly(spaghetti, pecorino) }
     end
