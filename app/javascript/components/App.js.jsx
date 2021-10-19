@@ -1,22 +1,37 @@
-// import React, {Component, useState} from 'react'
 import React, {useState} from 'react'
 import Recipes from './Recipes.js.jsx'
 
 function App() {
   const [recipes, setRecipes] = useState([])
   const [ingredients, setIngredients] = useState([])
+  const [noResults, setNoResults] = useState(false)
 
   const searchRecipes = (ingredients) => {
     fetch(`/recipes/search?ingredients=${ingredients}`)
       .then(data => {
-        if (data.ok) {
+        if(data.ok) {
           return data.json()
         } else {
           throw new Error("Network error.");
         }
       })
-      .then(json => { setRecipes([...json]) })
+      .then(json => {
+        if(json.length === 0) {
+          setNoResults(true)
+        } else {
+          setNoResults(false)
+          setRecipes([...json])
+        }
+      })
       .catch(error => alert(error))
+  }
+
+  function NoResults() {
+    return(
+      <div className="no-results text-center">
+        <p>No Results</p>
+      </div>
+    )
   }
 
   return(
@@ -35,7 +50,7 @@ function App() {
       <div className="results">
         <div className="row">
           <div className="col-md-12">
-            <Recipes recipes={recipes}/>
+             {!noResults ? <Recipes recipes={recipes}/> : <NoResults/>}
           </div>
         </div>
       </div>
