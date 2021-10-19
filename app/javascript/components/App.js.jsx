@@ -66,7 +66,7 @@ function App() {
       </div>
       <div className="row">
         <div className="col-md-10">
-          <input type="text" className="form-control" value={ingredients} onChange={e => setIngredients(e.target.value)} placeholder="Input a comma separated list of ingredients"/>
+          <input type="text" className="form-control" value={ingredients} onChange={e => setIngredients(e.target.value)} placeholder="Input a comma-separated list of ingredients"/>
         </div>
         <div className="col-md-2">
           <Button isLoading={isLoading}/>
