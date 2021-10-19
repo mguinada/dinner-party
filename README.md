@@ -27,9 +27,9 @@ As the host of a dinner party, I want to know what dishes can I cook given the i
 As the host of a dinner party, I want to know if the ingredients I currently have in my fridge offer me appropriate options for the menu or if I need to go to the market.
 
 
-
 ## Database Diagram
 
+![db-diagram](https://user-images.githubusercontent.com/605980/137990767-c1822c0a-fb55-46c8-95bf-4b6370a6547a.png)
 
 
 ## Stack
