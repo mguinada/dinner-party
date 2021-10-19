@@ -9,7 +9,7 @@ class Ingredient < ApplicationRecord
     scope = all
 
     descriptions.each_with_index do |description, index|
-      query = ["ingredients.description ILIKE :criteria", criteria: "%#{description}%"]
+      query = ["ingredients.description ~* :criteria", criteria: "\\y#{description}\\y"]
       scope = index.zero? ? scope.where(*query) : scope.or(Ingredient.where(*query))
     end
 
