@@ -20,14 +20,14 @@ function App() {
         }
       })
       .then(json => {
-        setLoading(false)
-
         if(json.length === 0) {
           setNoResults(true)
         } else {
           setNoResults(false)
           setRecipes([...json])
         }
+
+        setLoading(false)
       })
       .catch(error => {
         setLoading(false)
