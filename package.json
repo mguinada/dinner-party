@@ -33,6 +33,10 @@
   },
   "jest": {
     "rootDir": "./app/javascript/components",
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/specs/**/*.[jt]s?(x)"
+    ],
     "moduleFileExtensions": [
       "js",
       "jsx"
