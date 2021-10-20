@@ -20,7 +20,22 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
     "webpack-dev-server": "^3"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "rootDir": "./app/javascript/components",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  }
 }
