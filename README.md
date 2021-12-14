@@ -1,20 +1,14 @@
 # README
 
-
-
 ## Dinner Party
 
-This prototype is [hosted](https://dinner-party-16003.herokuapp.com/) at Heroku.
-
-
+An experiemnt with [React](https://reactjs.org/)
 
 ## Operation
 
-1. Access https://dinner-party-16003.herokuapp.com/
-2. Input a comma-separated list of ingredients
-3. Click `Search`
-
-
+1. Input a comma-separated list of ingredients (in the french language).
+2. Click `Search`.
+3. A list of recipes that are made with the ingredients will be displayed.
 
 ## User Stories
 
